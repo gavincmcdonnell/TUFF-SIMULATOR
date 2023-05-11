@@ -3,12 +3,12 @@ const beatName = document.getElementById('beat-name');
 const padContainer = document.getElementById('pad-container');
 
 // Press keys
-let selectedLib;
+let currentLibrary;
 const pressKeyHandler = (e) => {
 	switch (e.keyCode) {
 		case 81:
 			classClick('Q');
-			const filterQ = selectedLib.filter((pad) => pad.key === 'Q');
+			const filterQ = currentLibrary.filter((pad) => pad.key === 'Q');
 			const audioQ = new Audio(filterQ[0].sound);
 			audioQ.currentTime = 0;
 			audioQ.play();
@@ -16,54 +16,54 @@ const pressKeyHandler = (e) => {
 			break;
 		case 87:
 			classClick('W');
-			const filterW = selectedLib.filter((pad) => pad.key === 'W');
+			const filterW = currentLibrary.filter((pad) => pad.key === 'W');
 			playSound(filterW[0].sound, filterW[0].name);
 			break;
 		case 69:
 			classClick('E');
-			const filterE = selectedLib.filter((pad) => pad.key === 'E');
+			const filterE = currentLibrary.filter((pad) => pad.key === 'E');
 			playSound(filterE[0].sound, filterE[0].name);
 			break;
 		case 82:
 			classClick('R');
-			const filterR = selectedLib.filter((pad) => pad.key === 'R');
+			const filterR = currentLibrary.filter((pad) => pad.key === 'R');
 			playSound(filterR[0].sound, filterR[0].name);
 			break;
 		case 84:
 			classClick('T');
-			const filterT = selectedLib.filter((pad) => pad.key === 'T');
+			const filterT = currentLibrary.filter((pad) => pad.key === 'T');
 			playSound(filterT[0].sound, filterT[0].name);
 			break;
 		case 89:
 			classClick('Y');
-			const filterY = selectedLib.filter((pad) => pad.key === 'Y');
+			const filterY = currentLibrary.filter((pad) => pad.key === 'Y');
 			playSound(filterY[0].sound, filterY[0].name);
 			break;
 		case 85:
 			classClick('U');
-			const filterU = selectedLib.filter((pad) => pad.key === 'U');
+			const filterU = currentLibrary.filter((pad) => pad.key === 'U');
 			playSound(filterU[0].sound, filterU[0].name);
 			break;
 		case 73:
 			classClick('I');
-			const filterI = selectedLib.filter((pad) => pad.key === 'I');
+			const filterI = currentLibrary.filter((pad) => pad.key === 'I');
 			playSound(filterI[0].sound, filterI[0].name);
 			break;
 		case 79:
 			classClick('O');
-			const filterO = selectedLib.filter((pad) => pad.key === 'O');
+			const filterO = currentLibrary.filter((pad) => pad.key === 'O');
 			playSound(filterO[0].sound, filterO[0].name);
 			break;
 		case 49:
-			selectedLib = libraryOne;
+			currentLibrary = libraryOne;
 			createPads(libraryOne);
 			break;
 		case 50:
-			selectedLib = libraryTwo;
+			currentLibrary = libraryTwo;
 			createPads(libraryTwo);
 			break;
 		case 51:
-			selectedLib = libraryThree;
+			currentLibrary = libraryThree;
 			createPads(libraryThree);
 			break;
 		default:
@@ -214,12 +214,12 @@ const classClick = (key) => {
 
 // Render library on first load
 window.onload = () => {
-	selectedLib = libraryOne;
+	currentLibrary = libraryOne;
 	createPads(libraryOne);
 };
 
 // Render libraries on click
 libOne.onclick = () => {
-	selectedLib = libraryOne;
+	currentLibrary = libraryOne;
 	createPads(libraryOne);
 };

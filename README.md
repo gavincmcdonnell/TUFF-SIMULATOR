@@ -10,5 +10,5 @@ The first `@import` commands are to import fonts from Google Fonts, which I also
 
 # JavaScript Documentation
 
-The majority of this project is run using JavaScript.  Beginning at the top of the index.js file, there are a few lines setting up variables to reference elements from the HTML (`const libOne` function).
+The majority of this project is run using JavaScript.  Beginning at the top of the index.js file, there are a few lines setting up variables to reference elements from the HTML (`const libOne`, `document.getElementById`). Next, at the top of the press keys functions, there is a let function.  `let currentLibrary` is to declare `currentLibrary` as the variable
 
