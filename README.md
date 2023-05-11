@@ -1,6 +1,6 @@
 # tuffsimulator.github.io
  
- gavincmcdonnell.github.io/TUFF-SIMULATOR
+ https://gavincmcdonnell.github.io/TUFF-SIMULATOR
 
 ## HTML Documentation
 
