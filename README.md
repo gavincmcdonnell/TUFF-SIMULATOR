@@ -1,4 +1,6 @@
 # gavincmcdonnell.github.io/TUFF-SIMULATOR
+ 
+https://gavincmcdonnell.github.io/TUFF-SIMULATOR/
 
 ## HTML Documentation
 
@@ -11,5 +13,5 @@ The first `@import` commands are to import fonts from Google Fonts, which I also
 # JavaScript Documentation
 
 The majority of this project is run using JavaScript.  Beginning at the top of the index.js file, there are a few lines setting up variables to reference elements from the HTML (`const libOne`, `document.getElementById`). Next, at the top of the press keys functions, there is a let function.  `let currentLibrary` is to declare `currentLibrary` as the variable for storing the sound library in the future.  Next, I defined the `const pressKeyHandler` funtion that calls an event when a keyboard key gets pressed.  This is probably the most important function seeing as it makes you able to play the drum pads with your keyboard and not just your mouse.  Nested within this function is a switch statement to help the machine perform multiple keys, and then I nested every key from Q through O within this so that they all play down a line.  Next I added `document.addEventListener` to listen for events where the keys are pressed down.  Next was the `function sound(src)` function that helps create audio elements and adds them.  The code nested within the sound function mostly came from a code along on the medium website, as I got stuck on the second line of this.  It ended up being a typo in the end and no actual error in the code, but this tripped me up for a while. After that, I added an array of variables storing the sounds that I added to my sounds folder for the website.  An example one be `oneQ = new sound(file path for the sound you want mapped to Q here)`.  Next is where I struggled for the longest time, because the sounds would play when I clicked the keys but they wouldn't start over if I clicked the same key twice until the audio file had finished playing.  The original code I was using looked like this: 
-`const playSound = (sound, name) =>                                        sound.play();                                                              beatName.innerHTML = name;`
+`const playSound = (sound, name) => sound.play(); beatName.innerHTML = name;`
 After a couple of hours of searching for a solution, I finally landed on a simple fix that basically finished off the project.  I added `newSound current time = 0` so that every time I clicked on the key, the time of the WAV file would reset to 0 seconds!  The class functions after that help to reference the CSS file. The TUFF SIMULATOR is finished, for now!
