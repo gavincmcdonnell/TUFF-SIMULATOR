@@ -1,10 +1,8 @@
 const libOne = document.getElementById('lib-1');
-const libTwo = document.getElementById('lib-2');
-const libThree = document.getElementById('lib-3');
 const beatName = document.getElementById('beat-name');
 const padContainer = document.getElementById('pad-container');
 
-// Press key events
+// Press keys
 let selectedLib;
 const pressKeyHandler = (e) => {
 	switch (e.keyCode) {
@@ -74,10 +72,10 @@ const pressKeyHandler = (e) => {
 	}
 };
 
-// Keys event listeners
+// Keys events
 document.addEventListener('keydown', pressKeyHandler);
 
-// Audio element generator
+// Audio elements
 function sound(src) {
 	this.sound = document.createElement('audio');
 	this.sound.src = src;
@@ -94,7 +92,7 @@ function sound(src) {
 	};
 }
 
-// Sound libraries
+// Sound libraries (may add more)
 //      First Library
 oneQ = new sound('./sounds/library1/808.wav');
 oneW = new sound('./sounds/library1/clap.wav');
@@ -162,7 +160,7 @@ libraryOne = [
 	}
 ];
 
-// Pad element generator
+// Pad elements
 function newPad(pad) {
 	const { sound, name, key } = pad;
 	this.newPad = document.createElement('div');
@@ -181,7 +179,7 @@ function newPad(pad) {
 	padContainer.appendChild(this.newPad);
 }
 
-// Create pad function
+// Create pad 
 const createPads = (library) => {
 	while (padContainer.firstChild) {
 		padContainer.removeChild(padContainer.lastChild);
@@ -191,7 +189,7 @@ const createPads = (library) => {
 	});
 };
 
-// Play sound function
+// Play sound
 const playSound = (soundObj, name) => {
 	const newSound = new Audio(soundObj.sound.src);
 	newSound.currentTime = 0
@@ -199,13 +197,13 @@ const playSound = (soundObj, name) => {
 	beatName.innerHTML = name;
 };
 
-// Edit class when hover
+// Edit when hovering
 const classHover = (key) => {
 	const pad = document.getElementById(key);
 	pad.classList.add('drum-pad-hover');
 };
 
-// Edit class when clicking
+// Edit when clicking
 const classClick = (key) => {
 	const pad = document.getElementById(key);
 	pad.classList.add('drum-pad-clicked');
